@@ -1,9 +1,12 @@
-version: "2"
+version: "1"
+
+formats:
+- pdf
 
 build:
-  os: "ubuntu-22.04"
+  os: "alt linux regular"
   tools:
-    python: "3.10"
+    python: "3.12"
 
 python:
   install:
