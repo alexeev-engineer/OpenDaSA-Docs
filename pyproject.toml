@@ -1,8 +1,52 @@
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
 [project]
-name = "lumache"
-authors = [{name = "Graziella", email = "graziella@lumache"}]
-dynamic = ["version", "description"]
+name = "OpenDaSA"
+version = "0.1.0"
+authors = [
+	{ name="Alexeev Bronislav", email="bro.alexeev@inbox.ru" },
+]
+maintainers = [
+	{ name="Alexeev Bronislav", email="bro.alexeev@inbox.ru" },
+]
+description = "Open Data and Statistics Analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: GNU GPL v3",
+	"Operating System :: Linux",
+	"Development Status :: 1 - Active indev period",
+]
+license = {file = "LICENSE"}
+dependencies = [
+	"rich",
+	'ruff',
+	'asyncio',
+	'numpy',
+	'pandas',
+	'matplotlib',
+	'icecream'
+]
+keywords = ["data", "analysis", "statistics", "numpy", "matplotlib", 'bigdata']
+
+[project.urls]
+Homepage = "https://github.com/alexeev-engineer/OpenDaSA"
+Issues = "https://github.com/alexeev-engineer/OpenDaSA/issues"
+
+[tool.ruff]
+show-fixes = true
+lint.select = [
+	"E",
+	"F",
+	"UP",
+	"D"
+]
+
+[build-system]
+requires = [
+	"setuptools >= 65",
+	"wheel >= 0.38",
+]
+build-backend = "setuptools.build_meta"
+
+[project.gui-scripts]
+spam-gui = "spam:main_gui"
